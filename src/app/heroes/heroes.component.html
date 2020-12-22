@@ -1,14 +1,5 @@
-<div *ngIf="selectedHero">
-  <h2>{{ selectedHero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ selectedHero.id }}</div>
-  <div>
-    <label
-      >name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name" />
-    </label>
-  </div>
-</div>
 <h2>My Heroes</h2>
+
 <ul class="heroes">
   <li
     *ngFor="let hero of heroes"
@@ -19,5 +10,8 @@
   </li>
 </ul>
 
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
 <!-- El atributo [(ngModel)] enlaza de forma bidireccional el input con la variable del component -->
-<!-- El atributo '[class.selected]="hero === selectedHero"' le asigna una clase css si se cumple alguna condicion -->
+<!-- El atributo [class.selected]="hero === selectedHero" le asigna una clase css si se cumple alguna condicion -->
+<!-- El atributo [hero]="selectedHero" settea un valor al otro componente -->
