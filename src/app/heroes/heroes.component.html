@@ -1,17 +1,9 @@
 <h2>My Heroes</h2>
 
 <ul class="heroes">
-  <li
-    *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)"
-  >
-    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </a>
   </li>
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
-<!-- El atributo [(ngModel)] enlaza de forma bidireccional el input con la variable del component -->
-<!-- El atributo [class.selected]="hero === selectedHero" le asigna una clase css si se cumple alguna condicion -->
-<!-- El atributo [hero]="selectedHero" settea un valor al otro componente -->
